@@ -23,8 +23,19 @@
             margin:5px;
         }
         .login-btn:hover + .drop-down {
+            position:absolute;
             display: block; /* Display the dropdown menu when login-btn is hovered */
         }
+        .Account_admin:hover{
+            position:relative;
+            display:flex;
+            flex-flow : column nowrap;
+            justify-content: center;
+            background-color:brown;
+            
+        }
+        
+       
     </style>
 </head>
 <body>
@@ -37,7 +48,7 @@
             </a>
             <ul class="links">
                 <span class="close-btn material-symbols-rounded">close</span>
-                <li><a href="/">Home</a></li>
+                <li><a href="./base.blade.php">Home</a></li>
                 <li><a href="{{route('home.service_categories')}}">Services</a></li>
                 <li><a href="#">Appliances</a></li>
                 <li><a href="#">Special Services</a></li>
@@ -46,12 +57,22 @@
             @if(Route::has('login'))
               @auth
                   @if(Auth::user()->utype === 'ADM')
-                  <li class="login-btn" style="list-style: none;">My Account(Admin)</li>
-                  <ul class="drop-down one-column hover-fade" style="list-style: none;">
-                    <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
-                    <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                  </ul>
+                  <div class = "Account_admin">
+
+
+                      <div class="login-btn" style="list-style: none;">My Account(Admin)
+                    </div>
+                      
+                        
+
+                            <ul class="drop-down one-column" style="list-style: none; position:absolute; top:70%">
+                                <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
+                                <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                            </ul>
+                            
+                
+                </div>
                @elseif(Auth::user()->utype === 'SVP')
                <li class="login-btn" style="list-style: none;">My Account(Service Provider)</li>
                   <ul class="drop-down one-column hover-fade" style="list-style: none;">

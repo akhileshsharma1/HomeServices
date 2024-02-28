@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Material Symbols Rounded' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,10 +21,10 @@
             </a>
             <ul class="links">
             <span class="close-btn material-symbols-rounded">close</span>
-             <li><a href="index.html">Home</a></li>
-             <li><a href="services.html">Services</a></li>
+             <li><a href="./">Home</a></li>
+             <li><a href="./">Services</a></li>
              <li><a href="#">Appliances</a></li>
-             <li><a href="contactus.html">Contact us</a></li>
+             <li><a href="./">Contact us</a></li>
              <li><a href="#">About Us</a></li>
             </ul>
             <button class="login-btn">LOG IN</button>
