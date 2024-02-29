@@ -6,6 +6,9 @@ use App\Http\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
+use App\Http\Livewire\Homepage;
+use App\Http\Livewire\ContactUsComponent;
+use App\Http\Livewire\AboutUsComponent;
 
 
 /*
@@ -20,9 +23,9 @@ use App\Http\Livewire\ServiceCategoriesComponent;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
 // });
-
+   //  return view('welcome');
+//
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -33,9 +36,13 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/logout',[LogoutController::class,'index'])->name('logout');
 Route::get('/service-categories',ServiceCategoriesComponent::class)->name('home.service_categories');
+Route::get('/home-page',Homepage::class)->name('homepage');
+Route::get('/Contact-us',ContactUsComponent::class)->name('contactus');
+Route::get('/About-us',AboutUsComponent::class)->name('aboutus');
+
 
 //For Customer
-Route::get('/',HomeComponent::class)->name('home'); 
+Route::get('/',Homepage::class)->name('home'); 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
