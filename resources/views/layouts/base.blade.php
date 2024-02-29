@@ -49,6 +49,12 @@
         .form-content {
             display: block;
         }
+
+        .navbar {
+            background-color: black;
+            width: 100vw;
+            padding: 10px 22px;
+        }
     </style>
 </head>
 
